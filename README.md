@@ -8,6 +8,8 @@ while with Spring Boot 2 (Spring 5) everything is fine. In both cases the applic
 and produces the expected output:
 
 ```
+mvn test
+...
 Service output: Hello, world!
 ```
 
