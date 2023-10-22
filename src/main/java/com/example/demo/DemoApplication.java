@@ -2,20 +2,14 @@ package com.example.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
+import org.springframework.context.ConfigurableApplicationContext;
 
 @SpringBootApplication
 public class DemoApplication {
 
-	@Bean
-	public String helloString(MyService service) {
-		String result = service.sayHello();
-		System.err.printf("Service output: %s%n", result);
-		return result;
-	}
-
 	public static void main(String[] args) {
-		SpringApplication.run(DemoApplication.class, args);
+		ConfigurableApplicationContext context = SpringApplication.run(DemoApplication.class, args);
+		System.err.printf("Service output: %s%n", context.getBean(MyService.class).sayHello());
 	}
 
 }

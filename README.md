@@ -8,7 +8,7 @@ while with Spring Boot 2 (Spring 5) everything is fine. In both cases the applic
 and produces the expected output:
 
 ```
-mvn test
+mvn spring-boot:run
 ...
 Service output: Hello, world!
 ```
@@ -31,7 +31,7 @@ The setup is a bit more complicated:
 
 When the application is started, the service output is printed to the console.
 
-Changing to Spring Boot 2 (e.g. `<version>2.7.14</version>`) makes this work without a stacktrace in the output.
+Changing to Spring Boot 2 (e.g. `<version>2.7.15</version>`) makes this work without a stacktrace in the output.
 
 We've inspected all setters of `org.springframework.aop.framework.ProxyFactoryBean` but nothing we could set would change this behavior.
 
